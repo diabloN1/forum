@@ -1,0 +1,112 @@
+/* Default dark mode styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Button */
+.shadcn-button {
+    padding: 10px 20px;
+    border: 2px solid #398b3c;
+    background-color: #398b3c;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.shadcn-button:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.shadcn-button:active {
+    background-color: #3e8e41;
+    border-color: #3e8e41;
+}
+
+/* Input Field */
+.shadcn-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 8px;
+    width: 50%;
+    transition: border-color 0.3s ease;
+}
+
+.shadcn-input:focus {
+    border-color: #398b3c;
+    outline: none;
+}
+
+/* Textarea */
+.shadcn-textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 8px;
+    width: 50%;
+    height: 150px;
+    resize: none;
+    transition: border-color 0.3s ease;
+}
+
+.shadcn-textarea:focus {
+    border-color: #398b3c;
+    outline: none;
+}
+
+/* Checkbox */
+.shadcn-checkbox input {
+    margin-right: 10px;
+}
+
+.shadcn-checkbox input:checked {
+    background-color: #398b3c;
+}
+
+/* Select Dropdown */
+.shadcn-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.shadcn-select:focus {
+    border-color: #398b3c;
+    outline: none;
+}
+
+/* Card */
+.shadcn-card {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.shadcn-card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.shadcn-card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.shadcn-card-content {
+    font-size: 14px;
+}

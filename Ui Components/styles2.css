@@ -1,0 +1,151 @@
+/* Default dark mode styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Set of Buttons */
+.shadcn-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.shadcn-button.primary {
+    background-color: #398b3c;
+    color: white;
+    border: 2px solid #398b3c;
+}
+
+.shadcn-button.primary:hover {
+    background-color: #317735;
+    border-color: #45a049;
+}
+
+.shadcn-button.secondary {
+    background-color: gray;
+    color: white;
+    border: 2px solid gray;
+}
+
+.shadcn-button.secondary:hover {
+    background-color: rgb(83, 83, 83);
+    border-color: #45a049;
+}
+
+.shadcn-button.outline {
+    background-color: transparent;
+    color: #398b3c;
+    border: 2px solid #398b3c;
+}
+
+.shadcn-button.outline:hover {
+    background-color: #398b3c;
+    color: white;
+}
+
+/* Badge */
+.badge-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.shadcn-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shadcn-badge.success {
+    background-color: #398b3c;
+    color: white;
+}
+
+.shadcn-badge.error {
+    background-color: #700700;
+    color: white;
+}
+
+.shadcn-badge.info {
+    background-color: gray;
+    color: white;
+}
+
+/* Alert Box */
+.shadcn-alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.success-alert {
+    background-color: #398b3c;
+    color: white;
+}
+
+.error-alert {
+    background-color: #700700;
+    color: white;
+}
+
+/* Toggle Switch */
+.shadcn-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.shadcn-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #398b3c;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}

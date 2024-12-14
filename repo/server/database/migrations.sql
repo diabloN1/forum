@@ -1,0 +1,61 @@
+CREATE TABLE IF NOT EXISTS Users (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Posts (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT UNIQUE NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    image_url TEXT, -- URL or path to the post image
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE IF NOT EXISTS Categories (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    name TEXT UNIQUE NOT NULL,
+    created_by_user_id INTEGER, -- The user who created this category
+    FOREIGN KEY (created_by_user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE IF NOT EXISTS PostCategory (
+    post_id TEXT UNIQUE NOT NULL,
+    category_id TEXT UNIQUE NOT NULL,
+    PRIMARY KEY (post_id, category_id),
+    FOREIGN KEY (post_id) REFERENCES Posts(id),
+    FOREIGN KEY (category_id) REFERENCES Categories(id)
+);
+
+CREATE TABLE IF NOT EXISTS Session (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT UNIQUE NOT NULL,
+    token TEXT UNIQUE NOT NULL,
+    expires_at DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE IF NOT EXISTS Conversations (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    user1_id TEXT UNIQUE NOT NULL,
+    user2_id TEXT UNIQUE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user1_id) REFERENCES Users(id),
+    FOREIGN KEY (user2_id) REFERENCES Users(id)
+);
+
+CREATE TABLE IF NOT EXISTS Messages (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    conversation_id TEXT UNIQUE NOT NULL,
+    sender_id TEXT UNIQUE NOT NULL,
+    content TEXT NOT NULL,
+    sent_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (conversation_id) REFERENCES Conversations(id),
+    FOREIGN KEY (sender_id) REFERENCES Users(id)
+);
